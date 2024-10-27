@@ -156,7 +156,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchTasksCount = async () => {
       try {
-        const response = await fetch("http://localhost:5000/tasks/count");
+        const response = await fetch(`${URLS.BackendEndPoint}/tasks/count`);
         const data = await response.json();
         setTasksCount(data.count);
       } catch (error) {
@@ -166,7 +166,7 @@ const Dashboard = () => {
 
     const fetchCompletedTasksCount = async () => {
       try {
-        const response = await fetch("http://localhost:5000/tasks/completed/count");
+        const response = await fetch(`${URLS.BackendEndPoint}/tasks/completed/count`);
         const data = await response.json();
         setCompletedTasksCount(data?.count); // Use optional chaining here
       } catch (error) {
@@ -176,7 +176,7 @@ const Dashboard = () => {
 
     const fetchInProgressTasksCount = async () => {
       try {
-        const response = await fetch("http://localhost:5000/tasks/inprogress/count");
+        const response = await fetch(`${URLS.BackendEndPoint}/tasks/inprogress/count`);
         const data = await response.json();
         setInProgressTasksCount(data?.count); // Use optional chaining here
       } catch (error) {
@@ -186,7 +186,7 @@ const Dashboard = () => {
 
     const fetchTodosCount = async () => {
       try {
-        const response = await fetch("http://localhost:5000/tasks/todos/count");
+        const response = await fetch(`${URLS.BackendEndPoint}/tasks/todos/count`);
         const data = await response.json();
         setTodosCount(data?.count); // Use optional chaining here
       } catch (error) {

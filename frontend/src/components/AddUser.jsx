@@ -7,6 +7,7 @@ import Textbox from "./Textbox";
 import Loading from "./Loader";
 import Button from "./Button";
 import { toast } from 'react-toastify'; // Ensure toast is imported
+import URLS from "../utils/constant";
 
 
 const AddUser = ({ open, setOpen, userData, onAddUser }) => {
@@ -32,7 +33,7 @@ const AddUser = ({ open, setOpen, userData, onAddUser }) => {
                 return; // Early return if user does not exist
             }
 
-            const response = await fetch(`http://localhost:5000/users/${userData._id}`, {
+            const response = await fetch(`${URLS.BackendEndPoint}/users/${userData._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),

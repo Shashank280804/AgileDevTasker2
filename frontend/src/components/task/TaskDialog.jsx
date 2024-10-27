@@ -23,7 +23,7 @@ const TaskDialog = ({ task }) => {
 
   const deleteClicks = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/tasks/${task._id}`, {
+      const response = await fetch(`${URLS.BackendEndPoint}/tasks/${task._id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

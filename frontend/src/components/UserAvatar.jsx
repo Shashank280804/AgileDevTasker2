@@ -16,7 +16,7 @@ const UserAvatar = () => {
 
   const logoutHandler = async () => {
     try {
-      const response = await fetch('http://localhost:5000/signout', {
+      const response = await fetch(`${URLS.BackendEndPoint}/signout`, {
         method: 'POST',
         credentials: 'include', // Include credentials for the server to clear the cookie
       });

@@ -30,7 +30,7 @@ const AddTask = ({ open, setOpen }) => {
       };
   
       // Make a POST request to the backend
-      const response = await axios.post("http://localhost:5000/tasks", formData);
+      const response = await axios.post(`${URLS.BackendEndPoint}/tasks`, formData);
   
       console.log(response.data); // Log the response from the server
       setOpen(false); // Close the modal after successful submission

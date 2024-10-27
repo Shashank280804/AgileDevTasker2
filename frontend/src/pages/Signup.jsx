@@ -24,7 +24,7 @@ const Signup = () => {
   const submitHandler = async (formData) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/signup",
+        `${URLS.BackendEndPoint}/signup`,
         formData
       );
 

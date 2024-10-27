@@ -20,7 +20,7 @@ const Login = () => {
   const submitHandler = async (data) => {
     try {
       // Make a POST request to the backend /signin route
-      const response = await axios.post("http://localhost:5000/signin", {
+      const response = await axios.post(`${URLS.BackendEndPoint}/signin`, {
         email: data.email,
         password: data.password
       });

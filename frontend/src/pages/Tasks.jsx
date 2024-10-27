@@ -33,7 +33,7 @@ const Tasks = () => {
   // Fetch tasks when the component mounts and when tasks change
   const fetchTasks = async () => {
     try {
-      const response = await fetch("http://localhost:5000/tasks");
+      const response = await fetch(`${URLS.BackendEndPoint}/tasks`)
       const data = await response.json();
       setTasks(data);
     } catch (error) {
@@ -57,7 +57,7 @@ const Tasks = () => {
   // Function to create a new task
   const handleAddTask = async (newTask) => {
     try {
-      const response = await fetch("http://localhost:5000/tasks", {
+      const response = await fetch(`${URLS.BackendEndPoint}/tasks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTask),
@@ -72,7 +72,7 @@ const Tasks = () => {
   // Function to delete a task
   const handleDeleteTask = async (id) => {
     try {
-      await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
+      await fetch(`${URLS.BackendEndPoint}/tasks/${id}`, { method: "DELETE" });
       setTasks((prevTasks) => prevTasks.filter(task => task._id !== id));
     } catch (error) {
       console.error("Error deleting task:", error);
