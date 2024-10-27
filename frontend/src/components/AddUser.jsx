@@ -25,11 +25,15 @@ const AddUser = ({ open, setOpen, userData, onAddUser }) => {
 
   const handleOnSubmit = async (data) => {
     try {
+        console.log("hi1");
+        
         if (userData) {
-            // Check if user exists in local state
-            const userExists = user.find(user => user._id === userData._id);
-            if (!userExists) {
+            console.log("hi2");
+
+            // Check if user exists
+            if (user._id !== userData._id) { // Directly compare IDs
                 toast.error('User does not exist.');
+                console.log("user does not exist")
                 return; // Early return if user does not exist
             }
 
@@ -52,6 +56,7 @@ const AddUser = ({ open, setOpen, userData, onAddUser }) => {
         toast.error(`Error: ${error.message}`);
     }
 };
+
 
   return (
     <ModalWrapper open={open} setOpen={setOpen}>
