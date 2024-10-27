@@ -18,18 +18,6 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-// Allow requests from specific origins with credentials
-const allowedOrigins = ['http://localhost:3000']; // Add other origins as needed
-
-// CORS middleware configuration
-const corsOptions = {
-  origin: allowedOrigins,
-  credentials: true, // Allow credentials (cookies, authorization headers)
-};
-
-// Apply CORS middleware
-app.use(cors(corsOptions));
-
 const db = mongoose.connection;
 
 // Connection event handlers
@@ -40,6 +28,15 @@ db.once("open", () => {
 db.on("error", (error) => {
   console.error("MongoDB connection error:", error);
 });
+
+// CORS middleware configuration to allow all origins
+const corsOptions = {
+  origin: true,         // Allow all origins
+  credentials: true,    // Allow credentials (cookies, authorization headers)
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());
