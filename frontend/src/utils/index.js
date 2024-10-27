@@ -25,14 +25,20 @@ export function dateFormatter(dateString) {
 }
 
 export function getInitials(fullName) {
-  const names = fullName.split(" ");
+  if (!fullName || typeof fullName !== "string") {
+    return ""; // Return empty string if fullName is undefined or not a string
+  }
 
-  const initials = names.slice(0, 2).map((name) => name[0].toUpperCase());
+  const names = fullName.trim().split(" ");
+  const initials = names
+    .slice(0, 2)
+    .map((name) => (name ? name[0].toUpperCase() : "")) // Check if name exists before calling toUpperCase
+    .join("");
 
-  const initialsStr = initials.join("");
-
-  return initialsStr;
+  return initials;
 }
+
+
 
 export const PRIOTITYSTYELS = {
   high: "text-red-600",
