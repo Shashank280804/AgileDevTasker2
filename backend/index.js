@@ -30,11 +30,10 @@ db.on("error", (error) => {
   console.error("MongoDB connection error:", error);
 });
 
-// CORS configuration to allow requests from your frontend
+// CORS configuration to allow all origins
 const corsOptions = {
-  origin: "https://agiledevtasker2.onrender.com", // Frontend URL
-  credentials: true, // Allow credentials like cookies and authorization headers
-  allowedHeaders: ["Content-Type", "Authorization"], // Headers to accept
+  origin: "*", // Allow all origins
+  credentials: true, // Allow credentials (cookies, authorization headers)
 };
 
 // Apply CORS middleware to all routes
