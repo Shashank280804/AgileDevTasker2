@@ -5,6 +5,7 @@ import Textbox from "../components/Textbox";
 import Button from "../components/Button";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import URLS from "../utils/constant";
 
 const Signup = () => {
   const [username, setName] = useState("");

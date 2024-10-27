@@ -14,8 +14,8 @@ import moment from "moment";
 import { summary } from "../assets/data";
 import clsx from "clsx";
 import { Chart } from "../components/Chart";
-import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
-import UserInfo from "../components/UserInfo";
+import { PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
+import URLS from "../utils/constant";
 
 const TaskTable = ({ tasks }) => {
   const ICONS = {

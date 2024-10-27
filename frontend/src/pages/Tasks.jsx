@@ -11,6 +11,7 @@ import TaskTitle from "../components/TaskTitle";
 import BoardView from "../components/BoardView";
 import Table from "../components/task/Table";
 import AddTask from "../components/task/AddTask";
+import URLS from "../utils/constant";
 
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },

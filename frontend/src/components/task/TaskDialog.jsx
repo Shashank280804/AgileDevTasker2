@@ -10,6 +10,7 @@ import AddTask from "./AddTask";
 import AddSubTask from "./AddSubTask";
 import ConfirmatioDialog from "../Dialogs";
 import { toast } from 'react-toastify';
+import URLS from "../../utils/constant";
 
 
 const TaskDialog = ({ task }) => {

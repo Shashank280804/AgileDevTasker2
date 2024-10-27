@@ -6,6 +6,7 @@ import { FaUser, FaUserLock } from "react-icons/fa";
 import { IoLogOutOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils";
+import URLS from '../utils/constant';
 
 const UserAvatar = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ const UserAvatar = () => {
 
   const logoutHandler = async () => {
     try {
-      const response = await fetch(`${URLS.BackendEndPoint}/signout`, {
+      const response = await fetch(`${URLS}/signout`, {
         method: 'POST',
         credentials: 'include', // Include credentials for the server to clear the cookie
       });
