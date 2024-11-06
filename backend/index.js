@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config(); // Load environment variables
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -45,6 +46,14 @@ app.use(express.json());
 // Registering routes
 app.use(userRouter);
 app.use(taskRouter);
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public")));
+
+// Catch-all route to handle client-side routing
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
 // Start the server
 app.listen(port, () => {
