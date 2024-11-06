@@ -48,11 +48,11 @@ app.use(userRouter);
 app.use(taskRouter);
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Catch-all route to handle client-side routing
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
 });
 
 // Start the server
