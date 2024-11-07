@@ -136,7 +136,7 @@ const TaskDialog = ({ task }) => {
 
       <AddSubTask open={open} setOpen={setOpen} />
 
-      <ConfirmatioDialog
+      <ConfirmationDialog
         open={openDialog}
         setOpen={setOpenDialog}
         onClick={handleDeleteConfirmation} // Proceed with deletion on confirmation

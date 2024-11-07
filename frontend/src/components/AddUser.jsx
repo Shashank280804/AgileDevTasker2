@@ -25,18 +25,10 @@ const AddUser = ({ open, setOpen, userData, onAddUser }) => {
 
   const handleOnSubmit = async (data) => {
     try {
-        console.log("hi1");
-        
+        console.log("Submitting form");
+
         if (userData) {
-            console.log("hi2");
-
-            // Check if user exists
-            if (user._id !== userData._id) { // Directly compare IDs
-                toast.error('User does not exist.');
-                console.log("user does not exist")
-                return; // Early return if user does not exist
-            }
-
+            // Proceed with updating the existing user without checking for user ID
             const response = await fetch(`${URLS.BackendEndPoint}/users/${userData._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
@@ -56,6 +48,7 @@ const AddUser = ({ open, setOpen, userData, onAddUser }) => {
         toast.error(`Error: ${error.message}`);
     }
 };
+
 
 
   return (
