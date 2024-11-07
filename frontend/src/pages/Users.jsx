@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import { IoMdAdd } from "react-icons/io";
 import { getInitials } from "../utils";
 import clsx from "clsx";
-import ConfirmatioDialog from "../components/Dialogs";
+import ConfirmationDialog from "../components/Dialogs";
 import AddUser from "../components/AddUser";
 
 const Users = () => {
@@ -144,7 +144,7 @@ const Users = () => {
         onAddUser={handleAddUser} // Pass the function to handle new user addition
       />
 
-      <ConfirmatioDialog
+      <ConfirmationDialog
         open={openDialog}
         setOpen={setOpenDialog}
         onClick={deleteHandler}

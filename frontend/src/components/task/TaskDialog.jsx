@@ -8,7 +8,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { Menu, Transition } from "@headlessui/react";
 import AddTask from "./AddTask";
 import AddSubTask from "./AddSubTask";
-import ConfirmatioDialog from "../Dialogs";
+import ConfirmationDialog from "../Dialogs";
 import { toast } from 'react-toastify';
 import URLS from "../../utils/constant";
 
